@@ -17,3 +17,4 @@ const arrayOfFruit = ['banana', 'banana', 'banana', 'kiwi'];
 const result = transformBananasToOranges(arrayOfFruit);
 
 console.log(result);
+// Can anyone spot any problems? Hint: transformFnBananaToApple & transformFnAppleToOrange

@@ -1,6 +1,5 @@
 // Basic example of bridging data with FC.
 
-
 /*
  Take an array of bananas and turn it into an array of apples.
  Assumption is input is an array of strings, any banana will turn to an apple,
@@ -12,6 +11,7 @@ const bananasToApples = (arr) => {
   }, [])
 }
 
+// Do the same thing but take an apple and turn it into an orange
 const applesToOranges = (arr) => {
     return arr.reduce((acc, curr) => {
         return curr === 'apple' ? [...acc, 'orange'] : acc

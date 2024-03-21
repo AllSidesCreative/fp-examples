@@ -1,40 +1,30 @@
-// Let's introduce 3 very common ways to do FP, with 3 functions that belong to the functor array
-// map, filter and reduce
+// Imperative coding, let's go through 2 examples
 
-const bananasToApplesMap = (arr) => {
-    return arr.map((fr) => fr === 'banana' ? 'apple' : null)
-}
-
+// Problem #1, creating a new array.
 const arrayOfFruit = ['banana', 'banana', 'banana', 'kiwi'];
 
-const result = bananasToApplesMap(arrayOfFruit)
+// Most developers would do something like this, if something is repeatable make a function
+const fnBananaToApple = (fr) => fr === 'banana' ? 'apple' : null;
+const newArr = []
 
-console.log(result);
-
-// We have problem of the null value, let's deal with that.
-
-const bananasToApplesFilter = (arr) => {
-    return arr.map((fr) => fr === 'banana' ? 'apple' : null).filter(Boolean);
+for (let i = 0; i < arrayOfFruit.length; i++) {
+    const fruit = fnBananaToApple(arrayOfFruit[i])
+    if(fruit) { // handle null cases
+        newArr.push(fruit)
+    }
 }
 
-const result2 = bananasToApplesFilter(arrayOfFruit)
+console.log(newArr);
 
-console.log(result2);
+// Problem #2, creating a string.
 
-// Can we do a bit better?
-// Introducing a powerful function, reduce.
+let fruit = '';
 
-
-const bananasToApplesReduce = (arr) => {
-    return arr.reduce((acc, curr) => {
-        return curr === 'banana' ? [...acc, 'apple'] : acc
-    }, [])
+for (let i = 0; i < arrayOfFruit.length; i++) {
+    console.log(fruit); // notice how fruit is mutated on every iteration?
+    fruit += arrayOfFruit[i] + ', '
 }
+// console.log(fruit);
 
-
-
-const result3 = bananasToApplesReduce(arrayOfFruit)
-
-// console.log(result3);
-
-
+// forEach loop would also work for both of these problems, but you STILL need to
+// mutate a string or a new array.

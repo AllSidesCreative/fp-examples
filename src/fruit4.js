@@ -1,28 +1,27 @@
+// Let's put it all together!
 import { compose } from 'ramda';
+
+//  Fruity logic
 const fnBananaToApple = (fr) => fr === 'banana' ? 'apple' : null;
 const fnAppleToOrange = (fr) => fr === 'apple' ? 'orange' : null;
-
-// Difference here is we're checking the type of param passed in, it could be an array or a string
-// It is now able to deal with single strings on their own
-// banana -> orange
-const transformFunction = (fn, data) => {
-    if(typeof data === 'string') {
-        return fn(data) || ''
-    }
-    return data.reduce((acc, curr) => {
+const transformFunction = (fn, arr) => {
+    return arr.reduce((acc, curr) => {
         const result = fn(curr);
         return result ? [...acc, result] : acc
     }, [])
 }
-const transformFnBananaToApple = (arr) => transformFunction(fnBananaToApple, arr)
-const transformFnAppleToOrange = (arr) => transformFunction(fnAppleToOrange, arr);
 
-const transformBananasToOranges = compose(transformFnAppleToOrange, transformFnBananaToApple);
+// This is a higher order function AND it accepts any number of arguments
+const composeFunctions = (...fns) => {
+    const transformedFns = fns.map((f) => (arr) =>  transformFunction(f, arr))
+    const composedFns = compose(...transformedFns)
+    return (data) => composedFns(data);
+}
 
-const fruit = 'banana';
+const transformBananasToOranges = composeFunctions(fnAppleToOrange, fnBananaToApple);
 
-const result = transformBananasToOranges(fruit);
+const arrayOfFruit = ['banana', 'banana', 'banana', 'kiwi'];
+
+const result = transformBananasToOranges(arrayOfFruit)
 
 console.log(result);
-
-console.log( transformBananasToOranges(['banana', 'banana', 'banana', 'kiwi']))

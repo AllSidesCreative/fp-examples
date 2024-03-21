@@ -15,13 +15,13 @@ const resultApplesToOranges = transformFunction(fnAppleToOrange, resultBananaToA
 
 console.log(resultApplesToOranges); // ['orange', 'orange', 'orange']
 
-// Now.. how do we get bananas into apples?
+// Now... how do we get bananas into apples?
 // Comment in example below for a standard way of doing things.
 
-// const noobFunction = (arr) => {
-//     const resultBananaToApples = transformFunction(fnBananaToApple, arr);
-//     const resultApplesToOranges = transformFunction(fnAppleToOrange, resultBananaToApples);
-//     return resultApplesToOranges
-// }
-//
-// console.log(noobFunction(arrayOfFruit));
+const noobFunction = (arr) => {
+    const resultBananaToApples = transformFunction(fnBananaToApple, arr);
+    const resultApplesToOranges = transformFunction(fnAppleToOrange, resultBananaToApples);
+    return resultApplesToOranges
+}
+
+console.log(noobFunction(arrayOfFruit));
