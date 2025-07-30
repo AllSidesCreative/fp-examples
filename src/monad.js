@@ -8,7 +8,7 @@ const fn = (x) => x;
 
 const result = arrayOfFruit.map(fn);
 
-console.log(result);
+// console.log(result);
 
 // How do we do this? we want one array with no sub arrays.
 // We could write a function that checks the value and returns a deconstruction if it is an array.
@@ -30,9 +30,9 @@ console.log(result);
 // Promises and arrays are both monads.
 // Let's look at arrays only for today.
 
-// Monads are functors (data structures that implement map) AND...
+// Monads are functors (things that implement map) AND...
 // they also implement a more powerful function.. flatmap.
-// Not so scary now, huh?
+// Flatmap is just map that flattens (it unboxes)
 
 
 
@@ -41,7 +41,5 @@ console.log(result);
 
 
 const flattenedArr = arrayOfFruit.flatMap(fn);
-// console.log(flattenedArr)
-
-// Let's discuss what makes flatmap interesting...
+console.log(flattenedArr)
 

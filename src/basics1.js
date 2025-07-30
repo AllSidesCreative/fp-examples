@@ -11,7 +11,7 @@
 const fnBananaToApple = (fr) => fr === 'banana' ? 'apple' : null;
 
 const bananasToApplesMap = (arr) => {
-    return arr.map(fnBananaToApple)
+  return arr.map(fnBananaToApple)
 }
 
 const arrayOfFruit = ['banana', 'banana', 'banana', 'kiwi'];
@@ -24,7 +24,7 @@ console.log(result);
 // We need to introduce a new function called filter.
 
 const bananasToApplesFilter = (arr) => {
-    return arr.map(fnBananaToApple).filter(Boolean);
+  return arr.map(fnBananaToApple).filter(Boolean);
 }
 
 const result2 = bananasToApplesFilter(arrayOfFruit)
@@ -36,9 +36,9 @@ console.log(result2);
 // Let's solve problem #1 again
 
 const bananasToApplesReduce = (arr) => {
-    return arr.reduce((acc, curr) => {
-        return curr === 'banana' ? [...acc, 'apple'] : acc
-    }, [])
+  return arr.reduce((acc, curr) => {
+    return curr === 'banana' ? [...acc, 'apple'] : acc
+  }, [])
 }
 
 

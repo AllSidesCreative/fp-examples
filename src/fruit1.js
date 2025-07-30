@@ -9,8 +9,8 @@
 const fnBananaToApple = (fr) => fr === 'banana' ? 'apple' : null;
 const bananasToApples = (arr) => {
   return arr.reduce((acc, curr) => {
-      const fruit = fnBananaToApple(curr)
-      return fruit ? [...acc, fruit] : acc
+    const fruit = fnBananaToApple(curr)
+    return fruit ? [...acc, fruit] : acc
   }, [])
 }
 
@@ -18,10 +18,10 @@ const bananasToApples = (arr) => {
 
 const fnAppleToOrange = (fr) => fr === 'apple' ? 'orange' : null;
 const applesToOranges = (arr) => {
-    return arr.reduce((acc, curr) => {
-        const fruit = fnAppleToOrange(curr)
-        return fruit ? [...acc, fruit] : acc
-    }, [])
+  return arr.reduce((acc, curr) => {
+    const fruit = fnAppleToOrange(curr)
+    return fruit ? [...acc, fruit] : acc
+  }, [])
 }
 
 const arrayOfFruit = ['banana', 'banana', 'banana', 'kiwi'];
