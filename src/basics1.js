@@ -18,7 +18,7 @@ const arrayOfFruit = ['banana', 'banana', 'banana', 'kiwi'];
 
 const result = bananasToApplesMap(arrayOfFruit)
 
-console.log(result);
+// console.log(result);
 
 // We still have problem of the null value, let's deal with that.
 // We need to introduce a new function called filter.
@@ -29,7 +29,7 @@ const bananasToApplesFilter = (arr) => {
 
 const result2 = bananasToApplesFilter(arrayOfFruit)
 
-console.log(result2);
+// console.log(result2);
 
 // Can we do a bit better?
 // Introducing a powerful function, reduce.
@@ -44,12 +44,12 @@ const bananasToApplesReduce = (arr) => {
 
 
 const result3 = bananasToApplesReduce(arrayOfFruit)
-// console.log(result3);
+console.log(result3);
 
 
 // Let's now solve problem #2
-const result4 = arrayOfFruit.reduce((acc, curr) => `${acc}, ${curr}`,'')
+const result4 = arrayOfFruit.reduce((acc, curr) => `${acc} ${curr},`,'')
 
-// console.log(result4);
+console.log(result4);
 
 

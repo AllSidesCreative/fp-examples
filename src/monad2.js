@@ -17,7 +17,7 @@ const getRawNameImperative = (user) => {
 const getDisplayNameImperative = (user) => {
   let name = ""
   if(!user) {
-    return null
+    return name
   }
   if(user?.displayName) {
     name =  user?.displayName

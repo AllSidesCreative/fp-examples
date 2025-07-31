@@ -3,7 +3,6 @@
 // Problem #1, creating a new array.
 const arrayOfFruit = ['banana', 'banana', 'banana', 'kiwi'];
 
-// Most developers would do something like this, if something is repeatable make a function
 const fnBananaToApple = (fr) => fr === 'banana' ? 'apple' : null;
 const newArr = []
 

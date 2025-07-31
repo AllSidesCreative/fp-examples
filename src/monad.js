@@ -25,21 +25,18 @@ const result = arrayOfFruit.map(fn);
 
 
 // Part 2
-// Let's discuss the magnus opus (but not really) of FP... monads
 
-// Promises and arrays are both monads.
-// Let's look at arrays only for today.
+// Arrays are good example of a monad.
 
-// Monads are functors (things that implement map) AND...
-// they also implement a more powerful function.. flatmap.
+// Monads are:
+// 1. Functors (things that implement map)
+// 2. They also implement a more powerful function... flatmap.
 // Flatmap is just map that flattens (it unboxes)
-
-
-
+// 3. They unwrap/unbox.
 
 
 
 
 const flattenedArr = arrayOfFruit.flatMap(fn);
 console.log(flattenedArr)
-
+// Array is a monad as it has map, flatmap, and it can return things back in the desired state (an array)
